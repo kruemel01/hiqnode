@@ -93,20 +93,20 @@ class HiQnetSocket extends EventEmitter {
 	constructor () {
 		super();
 		const sock = net.connect(3804, "192.168.1.6", function () {
-			console.log("connect");
 			this.emit("connect");
 		});
 		sock.on("data", function (buf) {
-			console.log(new HiQnetMessage(buf));
 			this.emit("message", new HiQnetMessage(buf));
 		});
 	}
 }
 
 var socket = new HiQnetSocket();
+
 socket.on("connect", () => {
 	console.log("Connected");
 });
+
 socket.on("message", (msg) => {
 	console.log(msg);
 });
