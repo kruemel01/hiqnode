@@ -1,6 +1,6 @@
 const net = require("net");
 
-const client = net.connect(5000, 192.168.1.31, () => {
+const client = net.connect(5000, "192.168.1.31", () => {
 	console.log("Connected");
 });
 
