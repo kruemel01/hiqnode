@@ -5,6 +5,6 @@ const client = net.connect(5000, "192.168.1.31", () => {
 });
 
 client.on('data', (data) => {
-	console.log(data.toString);
+	console.log(data.toString());
 	client.write("Ack");
 });
