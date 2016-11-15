@@ -9,7 +9,7 @@ const server = net.createServer(function (socket) {
 	socket.write("Welcome " + socket.name + "\n");
 	console.log(socket.name);
 	socket.on("data", function (data) {
-		console.log(data);
+		console.log(data.toString);
 	});
 });
 
