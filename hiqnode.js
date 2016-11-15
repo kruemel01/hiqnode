@@ -92,7 +92,7 @@ const EventEmitter = require("events");
 class HiQnetSocket extends EventEmitter {
 	constructor () {
 		super();
-		const sock = net.connect(3804, "192.168.1.31", function () {
+		const sock = net.connect(3804, "192.168.1.6", function () {
 			console.log("connect");
 			this.emit("connect");
 		});
