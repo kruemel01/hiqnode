@@ -22,8 +22,9 @@ var msg = Buffer.from([
 ]);
 
 
-const server = net.createServer((socket) => {
+const server = net.createServer(function (socket) {
 	console.log("connection");
 	socket.write(msg);
-})
-.listen(3804);;
+});
+
+server.listen(3804);;
