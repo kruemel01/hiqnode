@@ -105,9 +105,6 @@ class HiQnetSocket extends EventEmitter {
 }
 
 var socket = new HiQnetSocket();
-socket.on("test", () => {
-	console.log("test");
-});
 socket.on("connect", () => {
 	console.log("Connected");
 });
