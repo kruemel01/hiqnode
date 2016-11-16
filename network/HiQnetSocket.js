@@ -6,7 +6,7 @@ const HiQnetMessage = require("../hiqnet/HiQnetMessage");
 module.exports = class HiQnetSocket extends EventEmitter {
 	constructor () {
 		super();
-		const sock = net.connect(3804, "192.168.1.6", function () {
+		const sock = net.connect(3804, "192.168.1.8", function () {
 			this.emit("connect");
 		});
 		sock.on("data", function (buf) {
