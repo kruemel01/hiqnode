@@ -1,6 +1,7 @@
 const HiQnetDeviceAddress = require("./HiQnetDeviceAddress");
 const HiQnetMessageType = require("./HiQnetMessageType");
 const HiQnetMessageBody = require("./HiQnetMessageBody");
+const HiQnetMessageFlags = require("./HiQnetMessageFlags");
 
 module.exports = class HiQnetMessage {
 
@@ -14,6 +15,7 @@ module.exports = class HiQnetMessage {
 		this.sourceAddress = new HiQnetDeviceAddress(buf.slice(6,12));
 		this.destAddress = new HiQnetDeviceAddress(buf.slice(12,18));
 		this.messageType = new HiQnetMessageType(buf.slice(18,20));
+		this.flags = new HiQnetMessageFlags(buf.readUInt16BE(20));
 		this.messageBody = new HiQnetMessageBody(buf.slice(this.headerLength), this.messageType);
 
 	}
